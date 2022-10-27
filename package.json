@@ -3,13 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@coinbase/wallet-sdk": "3.3.0",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@monaco-editor/react": "^4.4.6",
+    "@mui/material": "^5.10.11",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
-    "@types/react": "^18.0.0",
+    "@types/react": "^18.0.23",
     "@types/react-dom": "^18.0.0",
+    "@walletconnect/ethereum-provider": "1.7.1",
+    "@web3-react/coinbase-wallet": "^8.0.34-beta.0",
+    "@web3-react/core": "^8.0.35-beta.0",
+    "@web3-react/gnosis-safe": "^8.0.6-beta.0",
+    "@web3-react/metamask": "^8.0.28-beta.0",
+    "@web3-react/network": "^8.0.27-beta.0",
+    "@web3-react/walletconnect": "^8.0.35-beta.0",
+    "ethers": "^5.7.2",
+    "monaco-editor": "0.34.1",
+    "ms.macro": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -39,5 +54,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/ms.macro": "^2.0.0"
   }
 }

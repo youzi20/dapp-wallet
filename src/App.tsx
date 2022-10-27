@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ReactNode, useEffect, useMemo } from 'react'
+
+import { Connector } from '@web3-react/types'
+import { Web3ReactProvider, Web3ReactHooks } from '@web3-react/core'
+
+import Wallet from "./pages/Wallet";
+
+import { Connection } from './connection'
+import { getConnectionName } from './connection/utils'
+
+import useConnections from './hooks/useConnections';
 
 function App() {
+  const connections = useConnections();
+  const connectors: [Connector, Web3ReactHooks][] = connections.map(({ connector, hooks }) => [connector, hooks])
+
+  const key = useMemo(() => connections.map(({ type }: Connection) => getConnectionName(type)).join('-'), [connections])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Web3ReactProvider connectors={connectors} key={key}>
+      <Wallet />
+    </Web3ReactProvider>
   );
 }
 
